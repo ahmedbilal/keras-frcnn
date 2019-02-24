@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 def get_data(input_path):
 	found_bg = False
@@ -14,8 +15,14 @@ def get_data(input_path):
 	with open(input_path,'r') as f:
 
 		print('Parsing annotation files')
-
+		line_no = 1
 		for line in f:
+			if line_no % 10:
+				os.system("clear")
+			
+			print("Line #", line_no)
+			line_no += 1
+
 			line_split = line.strip().split(',')
 			(filename,x1,y1,x2,y2,class_name) = line_split
 
