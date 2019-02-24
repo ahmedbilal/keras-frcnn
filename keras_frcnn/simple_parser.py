@@ -2,10 +2,7 @@ import cv2
 import numpy as np
 import sys
 
-IJUPYTER_INSTALLED = 'IPython' in sys.modules
-
-if IJUPYTER_INSTALLED:
-	from IPython.display import clear_output
+from IPython.display import clear_output
 
 def get_data(input_path):
 	found_bg = False
