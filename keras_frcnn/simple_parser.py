@@ -1,6 +1,11 @@
 import cv2
 import numpy as np
-import os
+import sys
+
+IJUPYTER_INSTALLED = 'IPython' in sys.modules
+
+if IJUPYTER_INSTALLED:
+	from IPython.display import clear_output
 
 def get_data(input_path):
 	found_bg = False
@@ -18,7 +23,7 @@ def get_data(input_path):
 		line_no = 1
 		for line in f:
 			if line_no % 10:
-				os.system("clear")
+				clear_output()
 			
 			print("Line #", line_no)
 			line_no += 1
