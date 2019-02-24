@@ -19,7 +19,7 @@ def get_data(input_path):
 		print('Parsing annotation files')
 		line_no = 1
 		for line in f:
-			if line_no % 10:
+			if line_no % 10 == 0:
 				clear_output()
 			
 			print("Line #", line_no)
