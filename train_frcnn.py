@@ -242,6 +242,7 @@ for epoch_num in range(num_epochs):
 
 			progbar.update(iter_num, [('rpn_cls', np.mean(losses[:iter_num, 0])), ('rpn_regr', np.mean(losses[:iter_num, 1])),
 									  ('detector_cls', np.mean(losses[:iter_num, 2])), ('detector_regr', np.mean(losses[:iter_num, 3]))])
+			print("Hello There is no error yet")
 
 			if iter_num == epoch_length:
 				loss_rpn_cls = np.mean(losses[:, 0])
