@@ -277,6 +277,7 @@ for epoch_num in range(num_epochs):
 
 		except Exception as e:
 			print('Exception: {}'.format(e))
+			print(sys.exc_info())
 			continue
 
 print('Training complete, exiting.')
