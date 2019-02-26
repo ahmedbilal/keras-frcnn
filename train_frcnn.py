@@ -2,6 +2,7 @@ from __future__ import division
 import random
 import pprint
 import sys
+import traceback
 import time
 import numpy as np
 from optparse import OptionParser
@@ -242,7 +243,6 @@ for epoch_num in range(num_epochs):
 
 			progbar.update(iter_num, [('rpn_cls', np.mean(losses[:iter_num, 0])), ('rpn_regr', np.mean(losses[:iter_num, 1])),
 									  ('detector_cls', np.mean(losses[:iter_num, 2])), ('detector_regr', np.mean(losses[:iter_num, 3]))])
-			print("Hello There is no error yet")
 
 			if iter_num == epoch_length:
 				loss_rpn_cls = np.mean(losses[:, 0])
@@ -277,7 +277,7 @@ for epoch_num in range(num_epochs):
 
 		except Exception as e:
 			print('Exception: {}'.format(e))
-			print(sys.exc_info())
+			traceback.print_tb(e.__traceback__)
 			continue
 
 print('Training complete, exiting.')
