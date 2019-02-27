@@ -143,7 +143,7 @@ all_imgs = []
 
 classes = {}
 
-bbox_threshold = 0.8
+bbox_threshold = 0.1
 
 visualise = True
 
@@ -218,7 +218,7 @@ for idx, img_name in enumerate(sorted(os.listdir(img_path))):
 			probs[cls_name].append(np.max(P_cls[0, ii, :]))
 
 	all_dets = []
-
+	print("Bounding Box", bboxes)
 	for key in bboxes:
 		bbox = np.array(bboxes[key])
 
